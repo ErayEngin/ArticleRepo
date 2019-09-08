@@ -14,7 +14,7 @@ IDE olarak Visual Studio Community 2019 (16.2.3) kullanılmıştır.
 ## Soru ve Cevaplar
 
 Projede kullanıdığınız tasarım desenleri hangileridir? Bu desenleri neden kullandınız?
-  +Dapper ile generic repository pattern kullanılmış ve kod tekrarının önüne geçilmiştir.
++ Dapper ile generic repository pattern kullanılmış ve kod tekrarının önüne geçilmiştir.
 
 Kullandığınız teknoloji ve kütüphaneler hakkında daha önce tecrübeniz oldu mu? Tek tek
 yazabilir misiniz?
