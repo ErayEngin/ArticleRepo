@@ -1,0 +1,130 @@
+{
+	"id": "a6d12d58-3607-e498-69aa-4d00352e2d17",
+	"name": "ArticleDb",
+	"description": "",
+	"order": [
+		"a0eeff93-fc2b-5d5d-ad49-7911743621f2",
+		"d1108b09-029f-4520-60d9-42a3d23d4a07",
+		"eab4dfa4-cd42-3cd6-ee5e-7c02c76d5a3d",
+		"111dd2ca-1eb7-e2e1-a00f-a252813e65c4"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1567866626201,
+	"owner": "3079460",
+	"public": false,
+	"requests": [
+		{
+			"id": "111dd2ca-1eb7-e2e1-a00f-a252813e65c4",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://localhost:44378/api/posts/8",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567946314277,
+			"name": "PostDelete",
+			"description": "",
+			"collectionId": "a6d12d58-3607-e498-69aa-4d00352e2d17",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "a0eeff93-fc2b-5d5d-ad49-7911743621f2",
+			"headers": "",
+			"headerData": [],
+			"url": "https://localhost:44378/api/posts",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567945665341,
+			"name": "GetAllPosts",
+			"description": "",
+			"collectionId": "a6d12d58-3607-e498-69aa-4d00352e2d17",
+			"responses": []
+		},
+		{
+			"id": "d1108b09-029f-4520-60d9-42a3d23d4a07",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://localhost:44378/api/posts/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567945653713,
+			"name": "SavePost",
+			"description": "",
+			"collectionId": "a6d12d58-3607-e498-69aa-4d00352e2d17",
+			"responses": [],
+			"rawModeData": "{\n\t\"Title\" : \"Yeni\",\n\t\"Text\" : \"Test requesttt asdasd \",\n\t\"UserId\" : 1\n\t\n}"
+		},
+		{
+			"id": "eab4dfa4-cd42-3cd6-ee5e-7c02c76d5a3d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://localhost:44378/api/posts/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567946042054,
+			"name": "PostUpdate",
+			"description": "",
+			"collectionId": "a6d12d58-3607-e498-69aa-4d00352e2d17",
+			"responses": [],
+			"rawModeData": "{\n\t\"Id\" : 2,\n\t\"Title\" : \"test1\",\n\t\"Text\" : \"Ut varius, quam nec maximus cursus, libero purus dictum augue, in accumsan ante mi in massa. Suspendisse quis pellentesque ipsum, sit amet tempor sem. Nullam sed dolor scelerisque, ornare metus eu, cursus justo. Quisque imperdiet risus quis dui facilisis fringilla. Donec id pellentesque felis. Donec facilisis lorem nunc, quis placerat libero tristique a. Fusce porta ut urna auctor dapibus. Nunc pretium sagittis turpis, eu gravida orci rutrum et. Nam vel elementum felis, molestie ornare sapien. Donec eleifend pulvinar risus, a rutrum urna. Morbi elementum pellentesque tempus. Mauris tincidunt sapien quis nisl molestie, in venenatis mauris mattis.\n\n\",\n\t\"UserId\" : 1\n}"
+		}
+	]
+}
