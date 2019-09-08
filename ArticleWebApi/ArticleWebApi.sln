@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArticleWebApi", "ArticleWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleWebApi.DataAccess", "ArticleWebApi.DataAccess\ArticleWebApi.DataAccess.csproj", "{0A723016-8694-48EF-91D9-D924BE4952BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleWebApi.Core", "ArticleWebApi.Core\ArticleWebApi.Core.csproj", "{0418F441-8C4E-422A-8D78-6B84590AFFBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A723016-8694-48EF-91D9-D924BE4952BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A723016-8694-48EF-91D9-D924BE4952BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A723016-8694-48EF-91D9-D924BE4952BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0418F441-8C4E-422A-8D78-6B84590AFFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0418F441-8C4E-422A-8D78-6B84590AFFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0418F441-8C4E-422A-8D78-6B84590AFFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0418F441-8C4E-422A-8D78-6B84590AFFBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
