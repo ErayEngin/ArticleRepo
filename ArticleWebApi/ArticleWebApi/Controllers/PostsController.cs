@@ -40,5 +40,18 @@ namespace ArticleWebApi.Controllers
                 return BadRequest(ex);
             }
         }
+        [HttpPut]
+        public ActionResult<bool> Update(PostModel requestModel)
+        {
+            try
+            {
+                postRepository.Update(requestModel);
+                return Ok("Güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
     }
 }

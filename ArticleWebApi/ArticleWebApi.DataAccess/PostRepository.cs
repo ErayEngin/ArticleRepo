@@ -27,5 +27,11 @@ namespace ArticleWebApi.DataAccess
             string sQuery = "INSERT INTO Posts VALUES(GETDATE(),GETDATE(),0, @Title, @text, @UserId)";
             sqlGateway.Execute(sQuery, request);
         }
+
+        public void Update(PostModel request)
+        {
+            string sQuery = "UPDATE Posts SET UpdateTime = GETDATE(), Title = @Title, Text= @Text WHERE Id = @Id";
+            sqlGateway.Execute(sQuery, request);
+        }
     }
 }
