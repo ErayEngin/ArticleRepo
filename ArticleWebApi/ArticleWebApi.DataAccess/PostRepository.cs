@@ -21,5 +21,11 @@ namespace ArticleWebApi.DataAccess
             string sQuery = "SELECT * FROM Posts WHERE IsDeleted = 0";
             return this.sqlGateway.Fetch<PostModel>(sQuery);
         }
+
+        public void Save(SavePostRequestModel request)
+        {
+            string sQuery = "INSERT INTO Posts VALUES(GETDATE(),GETDATE(),0, @Title, @text, @UserId)";
+            sqlGateway.Execute(sQuery, request);
+        }
     }
 }

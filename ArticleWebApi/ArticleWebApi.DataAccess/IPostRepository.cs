@@ -7,5 +7,6 @@ namespace ArticleWebApi.DataAccess
     public interface IPostRepository
     {
         IEnumerable<PostModel> GetAll();
+        void Save(SavePostRequestModel request);
     }
 }

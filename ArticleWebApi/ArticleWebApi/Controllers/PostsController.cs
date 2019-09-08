@@ -26,5 +26,19 @@ namespace ArticleWebApi.Controllers
             var result = postRepository.GetAll();
             return result.ToList();
         }
+
+        [HttpPost]
+        public ActionResult Get(SavePostRequestModel requestModel)
+        {
+            try
+            {
+                postRepository.Save(requestModel);
+                return Ok("Kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
     }
 }
