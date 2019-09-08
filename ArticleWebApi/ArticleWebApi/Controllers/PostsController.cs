@@ -20,7 +20,7 @@ namespace ArticleWebApi.Controllers
 
         // GET api/posts
         [HttpGet]
-        public ActionResult<IEnumerable<PostModel>> Get()
+        public ActionResult<IEnumerable<PostResponseModel>> Get()
         {
             var result = postRepository.GetAll();
             return result.ToList();
@@ -41,7 +41,7 @@ namespace ArticleWebApi.Controllers
         }
 
         [HttpPut]
-        public ActionResult<bool> Update(PostModel requestModel)
+        public ActionResult<bool> Update(PostResponseModel requestModel)
         {
             try
             {

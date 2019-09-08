@@ -6,9 +6,9 @@ namespace ArticleWebApi.DataAccess
 {
     public interface IPostRepository
     {
-        IEnumerable<PostModel> GetAll();
+        IEnumerable<PostResponseModel> GetAll();
         void Save(SavePostRequestModel request);
-        void Update(PostModel request);
+        void Update(PostResponseModel request);
         void Delete(int id);
     }
 }

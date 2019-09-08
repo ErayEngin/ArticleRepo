@@ -12,19 +12,33 @@ namespace ArticleWebApi.DataAccess
             this.sqlGateway = sqlGateway;
         }
 
-        public IEnumerable<PostModel> GetAll()
+        public IEnumerable<PostResponseModel> GetAll()
         {
             string sQuery = "SELECT * FROM Posts WHERE IsDeleted = 0";
-            return this.sqlGateway.Fetch<PostModel>(sQuery);
+            var list = this.sqlGateway.Fetch<PostResponseModel>(sQuery);
+
+            foreach (var item in list)
+            {
+                string sQuery2 = "SELECT C.Id, C.Name FROM CategoriesPosts CP INNER JOIN Categories C ON CP.CategoryId = C.Id WHERE PostId = " + item.Id;
+                var categories = this.sqlGateway.Fetch<CategoryModel>(sQuery2);
+                item.Categories = (List<CategoryModel>)categories;
+            }
+            return list;
         }
 
         public void Save(SavePostRequestModel request)
         {
-            string sQuery = "INSERT INTO Posts VALUES(GETDATE(),GETDATE(),0, @Title, @text, @UserId)";
-            sqlGateway.Execute(sQuery, request);
+            string sQuery = "INSERT INTO Posts VALUES(GETDATE(),GETDATE(),0, @Title, @text, @UserId); SELECT CAST(SCOPE_IDENTITY() as int)";
+            var id = sqlGateway.QueryFirst<int>(sQuery, request);
+
+            foreach (var item in request.CategorieIds)
+            {
+                string queryForCategories = "INSERT INTO CategoriesPosts(CategoryId,PostId) VALUES(@categoryId, @postId)";
+                sqlGateway.Execute(queryForCategories, new { @categoryId = item, @postId = id });
+            }
         }
 
-        public void Update(PostModel request)
+        public void Update(PostResponseModel request)
         {
             string sQuery = "UPDATE Posts SET UpdateTime = GETDATE(), Title = @Title, Text= @Text WHERE Id = @Id";
             sqlGateway.Execute(sQuery, request);
