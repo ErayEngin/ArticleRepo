@@ -9,5 +9,6 @@ namespace ArticleWebApi.DataAccess
         IEnumerable<PostModel> GetAll();
         void Save(SavePostRequestModel request);
         void Update(PostModel request);
+        void Delete(int id);
     }
 }

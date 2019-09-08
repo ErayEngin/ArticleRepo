@@ -1,9 +1,5 @@
 ﻿using ArticleWebApi.Core.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArticleWebApi.DataAccess
 {
@@ -33,5 +29,12 @@ namespace ArticleWebApi.DataAccess
             string sQuery = "UPDATE Posts SET UpdateTime = GETDATE(), Title = @Title, Text= @Text WHERE Id = @Id";
             sqlGateway.Execute(sQuery, request);
         }
+
+        public void Delete(int id)
+        {
+            string sQuery = "UPDATE Posts SET IsDeleted = 1 WHERE Id = @Id";
+            sqlGateway.Execute(sQuery, new { @Id = id });
+        }
+
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ArticleWebApi.Core.Models;
 using ArticleWebApi.DataAccess;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +39,7 @@ namespace ArticleWebApi.Controllers
                 return BadRequest(ex);
             }
         }
+
         [HttpPut]
         public ActionResult<bool> Update(PostModel requestModel)
         {
@@ -47,6 +47,21 @@ namespace ArticleWebApi.Controllers
             {
                 postRepository.Update(requestModel);
                 return Ok("Güncellendi.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public ActionResult<bool> Delete(int id)
+        {
+            try
+            {
+                postRepository.Delete(id);
+                return Ok(id+ " Id'li veri silindi.");
             }
             catch (Exception ex)
             {
